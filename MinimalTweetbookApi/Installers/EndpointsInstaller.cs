@@ -1,3 +1,5 @@
+using MinimalTweetbookApi.Repositories;
+
 namespace MinimalTweetbookApi.Installers;
 
 public class EndpointsInstaller : IInstaller
@@ -6,5 +8,6 @@ public class EndpointsInstaller : IInstaller
     {
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
+        services.AddSingleton<IPostRepository, PostRepository>();
     }
 }
